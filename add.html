@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Duck</title>
+</head>
+<body>
+    <label>Id:</label>
+    <input id="duckId">
+    <label>Type:</label>
+    <input id="duckType">
+    <button onclick="addDuck()">Add the Duck</button>
+    <!---This adds java script code to html file
+    function must be added either in head or body
+    should put script after buttons and text
+    are rendered for user experience-->
+    <script>
+        function addDuck(){
+            let duckIdNode = document.getElementById("duckId");
+            let duckId = duckIdNode.value;
+            let duckTypeNode = document.getElementById("duckType");
+            let duckType = duckTypeNode.value;
+            //create object with format of json
+            let duck = {id: duckId, type: duckType};
+            //print object as json
+            alert("You entered "+ JSON.stringify(duck));
+        }
+    </script>
+
+</body>
+</html>
