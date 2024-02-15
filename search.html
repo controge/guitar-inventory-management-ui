@@ -3,20 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search for a Guitar</title>
+   	<style>
+		body{
+            background-color: #c5b493;
+            margin : 0;
+            padding : 0;
+			font-family: 'Arial', sans-serif;
+        }
+		label{
+			font-size: 20px;
+			margin-left: 20px;
+			margin-bottom: 50px;
+			margin-right: 20px;
+			display: inline-block;
+			width: 100px;
+			text-align: left;
+			font-weight: bold;
+		}
+		input{
+			height: 35px;
+			width: 500px;
+			box-sizing: border-box;
+			border-radius: 5px;
+			vertical-align: middle;
+		}
+		.menu-link {
+            font-size: 32px;
+            font-weight: bold;
+			margin-right: 20px; /* Adjust the margin value as needed */
+        }
+		.right-justify{
+            text-align: right;
+        }
+	</style>
+	<title>Search for a Guitar</title>
 </head>
 <body>
+	<a style = "font-size: 32px; font-weight: bold;">Guitar Inventory Management</a>
+    <p class = "right-justify">
+    <a href="about.html" class = "menu-link">About</a>
+    <a href="add.html" class ="menu-link">Add</a>
+    <a href="search.html" class = "menu-link">Search</a>
+    </p>
     <label>Builder:</label>
     <input id = "builder"/>
+    <br />
     <label>Model:</label>
     <input id = "model"/>
+    <br />
     <label>Type:</label>
     <input id = "type"/>
+    <br />
     <label>Back Wood:</label>
     <input id = "backWood"/>
+    <br />
     <label>Top Wood:</label>
     <input id = "topWood"/>
-
     <button onclick="search()">Search</button>
     <br />
 
