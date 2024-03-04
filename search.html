@@ -96,7 +96,7 @@
         	return(result);	
 		}
         async function search(){
-			if(guitars.length() == 0){
+			if(guitars.length == 0){
 				guitars = await getAll();
 			}
             let gBuilder = document.getElementById("builder").value.toLowerCase();
