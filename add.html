@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-	 body{
+		body{
            background-color: #c5b493;
             margin : 0;
             padding : 0;
@@ -79,7 +79,8 @@
     should put script after buttons and text
     are rendered for user experience-->
     <script>
-        function addGuitar(){
+		let host = "https://guitar-inventory-management-latest-okw9.onrender.com";
+        async function addGuitar(){
             let serialNode = document.getElementById("serialNumber");
 			let gSerialNumber = serialNode.value;
 			let priceNode = document.getElementById("price");
@@ -99,7 +100,22 @@
 				builder: gBuilder, model : gModel, type : gType,
                  backWood : gBackWood, topWood : gTopWood};
             //print object as json
-            alert("You entered "+ JSON.stringify(guitar));
+            let request = {
+          		method: "POST",
+         	 	headers: {
+            		"Content-Type" : "application/json"
+          				},
+	    		body: JSON.stringify(guitar)
+        	};
+        	let response = await fetch(host+"/guitars", request);
+        	if(response.status == 200){    
+				message = "The guitar was added successfully!";
+		    }else{
+				console.log(response);
+				message = "Something went wrong! Guitar data could not be saved.";
+		    }
+        alert(message);
+			//alert("You entered "+ JSON.stringify(guitar));
         }
     </script>
 
