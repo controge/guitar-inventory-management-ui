@@ -89,7 +89,7 @@
 		let guitars = []
 		async function getAll(){
 			let host = "https://guitar-inventory-management-controge.onrender.com";
-        	let response = await fetch(host+"/guitars");
+        	let response = await fetch(host+"/guitars/search");
         	let result = await response.json();
 
         	console.log(result);
