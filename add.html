@@ -79,7 +79,7 @@
     should put script after buttons and text
     are rendered for user experience-->
     <script>
-		let host = "https://guitar-inventory-management-controge.onrender.com";
+		let host = "http://localhost:8080";
         async function addGuitar(){
             let serialNode = document.getElementById("serialNumber");
 			let gSerialNumber = serialNode.value;
@@ -103,11 +103,11 @@
             let request = {
           		method: "POST",
          	 	headers: {
-            		"Content-Type" : "application/json"
+            		"Content-Type" : "application/json",
           				},
 	    		body: JSON.stringify(guitar)
         	};
-        	let response = await fetch(host+"/guitars", request);
+        	let response = await fetch(host+"/guitars/add", request);
         	if(response.status == 200){    
 				message = "The guitar was added successfully!";
 		    }else{
