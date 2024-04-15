@@ -45,11 +45,12 @@
 	<title>Add a Guitar</title>
 </head>
 <body>
-	<a style = "font-size: 32px; font-weight: bold;">Guitar Inventory Management</a>
+    <a style = "font-size: 32px;">Guitar Inventory Management</a>
     <p class = "right-justify">
     <a href="about.html" class = "menu-link">About</a>
     <a href="add.html" class ="menu-link">Add</a>
     <a href="search.html" class = "menu-link">Search</a>
+    <a href="login.html" class = "menu-link">Login</a>
     </p>
 	<label>Serial Number:</label>
 	<input id="serialNumber">
@@ -79,7 +80,7 @@
     should put script after buttons and text
     are rendered for user experience-->
     <script>
-		let host = "https://guitar-inventory-management-controge.onrender.com";
+		let host = getHost();
         async function addGuitar(){
             let serialNode = document.getElementById("serialNumber");
 			let gSerialNumber = serialNode.value;
